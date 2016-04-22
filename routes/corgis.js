@@ -19,7 +19,7 @@ router.get('/corgi', function(req, res, next) {
         var corgi = corgis[randomNumber]
         res.json(corgi);
       }
-    }
+    });
   });
 
 
