@@ -9,10 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.put('/:_id', function(req, res, next) {
-  var name = req.body.dogName;
-  Corgi.update({name: dogName}, function(name) {
-    res.json(name)
+router.put('/:id', function(req, res, next) {
+  var id = req.params.id;
+  Corgi.findByIdAndUpdate(req.params.id, { $set: req.body }, function (err, corgi) {
+    if (err) return res.status(500).send(err);
+    res.json(corgi);
   });
 });
 
