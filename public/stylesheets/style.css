@@ -1,0 +1,17 @@
+body{
+  background:#ccc;
+}
+
+
+nav{
+  text-align: center;
+  background:#555;
+  margin-top:0px;
+  padding: 5px;
+  color:steelblue;
+}
+
+
+.container{
+  padding-top: 30px;
+}
