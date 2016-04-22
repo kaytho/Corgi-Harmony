@@ -1,16 +1,14 @@
 body{
-  background:#ccc;
+  background-image:url(http://thumbs.dreamstime.com/z/traces-dog-bones-black-white-vector-pattern-32567160.jpg);
 }
-
 
 nav{
   text-align: center;
   background:#555;
   margin-top:0px;
   padding: 5px;
-  color:steelblue;
+  color:bold steelblue;
 }
-
 
 .container{
   padding-top: 30px;
