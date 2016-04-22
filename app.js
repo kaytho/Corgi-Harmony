@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.DB_CONN_COLIN_DATABASE);
+mongoose.connect(process.env.DB_CONN_CORGI_HARMONY);
 
 app.use('/', routes);
 app.use('/users', users);

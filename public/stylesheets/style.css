@@ -2,12 +2,40 @@ body{
   background-image:url(http://thumbs.dreamstime.com/z/traces-dog-bones-black-white-vector-pattern-32567160.jpg);
 }
 
+#buttons{
+
+  border-color: rgb(220,20,50);
+  border-size:5px;
+  opacity:.80;
+  border-style: dotted;
+  background-color: black;
+}
 nav{
   text-align: center;
-  background:#555;
+  background:black;
+  padding-top: 80px;
+  color: red;
+  opacity: .80;
   margin-top:0px;
   padding: 5px;
-  color:bold steelblue;
+  color:bold red;
+}
+
+#dogName{
+  color:rgb(220,20,50);
+  border: dotted black;
+  background-color: black;
+  opacity: .80;
+  font-size: 30px;
+  font-family: arial;
+}
+
+#dogImage{
+  background-color: red;
+  opacity: .80;
+  background-size: 20px;
+  border-color:red;
+  border-size: 30px;
 }
 
 .container{
