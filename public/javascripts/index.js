@@ -41,8 +41,7 @@ function getNewCorgi(){
       .done(function(data, textStatus){
         console.log(data.url);
         $('img').attr('src', data.url);
-        $(this).attr('href', $(this).attr('href') + data.id;
-
+        $(this).attr('href', $(this).attr('href') + data.id);
       })
       .fail(function(data, textStatus){
         console.log("fail " + data);
