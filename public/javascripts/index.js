@@ -2,6 +2,7 @@ $(document).ready(function(){
 
  // getNewCorgi()
 
+<<<<<<< HEAD
  $('a').click(function(e){
    e.preventDefault();
    e.stopPropagation();
@@ -11,7 +12,6 @@ $(document).ready(function(){
    // changeLikeStatus()
 
  })
-
 
 });
 
@@ -50,3 +50,4 @@ function getNewCorgi(){
        console.log("ERROR status: " + textStatus);
      })
  }
+
