@@ -6,9 +6,10 @@ $(document).ready(function(){
     e.preventDefault();
     e.stopPropagation();
     console.log('working');
-    changeLikeStatus();
+    getNewCorgi()
+    //changeLikeStatus();
     // changeLikeStatus()
-    // getNewCorgi()
+
   })
 
 
@@ -18,12 +19,11 @@ $(document).ready(function(){
 
 function changeLikeStatus(){
  corgiId = "571a599cfca0fd67b073e5bb"
-
-  $.ajax({
-  url: '/corgis/' + corgiId,
-  method: 'PUT',
-  data: { like: true }
-})
+      $.ajax({
+      url: '/corgis/' + corgiId,
+      method: 'PUT',
+      data: { id:"571a599cfca0fd67b073e5bb",  like: true }
+    })
   .done(function(data, textStatus) {
     //getNewCorgi();
   })
@@ -34,16 +34,18 @@ function changeLikeStatus(){
 }
 function getNewCorgi(){
     $.ajax({
-      url: '/corgis/',
+      url: '/corgis/corgi',
       method: 'GET',
       dataType: 'json'
     })
       .done(function(data, textStatus){
-        console.log("correct " + data);
+        console.log(data.url);
+        $('img').attr('src', data.url);
+        $(this).attr('href', $(this).attr('href') + data.id;
 
       })
       .fail(function(data, textStatus){
         console.log("fail " + data);
-        console.log("ERROR getting students. status: " + textStatus);
+        console.log("ERROR status: " + textStatus);
       })
   }
