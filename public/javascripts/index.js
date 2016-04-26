@@ -1,15 +1,16 @@
 $(document).ready(function(){
 
-  // getNewCorgi()
+ // getNewCorgi()
 
-  $('a').click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    console.log('working');
-    changeLikeStatus();
-    // changeLikeStatus()
-    // getNewCorgi()
-  })
+ $('a').click(function(e){
+   e.preventDefault();
+   e.stopPropagation();
+   console.log('working');
+   getNewCorgi()
+   //changeLikeStatus();
+   // changeLikeStatus()
+
+ })
 
 
 });
@@ -17,33 +18,35 @@ $(document).ready(function(){
 
 
 function changeLikeStatus(){
- corgiId = "571a599cfca0fd67b073e5bb"
+corgiId = "571a599cfca0fd67b073e5bb"
 
-  $.ajax({
-  url: '/corgis/' + corgiId,
-  method: 'PUT',
-  data: { like: true }
+ $.ajax({
+ url: '/corgis/' + corgiId,
+ method: 'PUT',
+ data: { like: true }
 })
-  .done(function(data, textStatus) {
-    //getNewCorgi();
-  })
-  .fail(function() {
-    console.log("fail " + data);
-    console.log("ERROR status: " + textStatus);
-  });
+ .done(function(data, textStatus) {
+   //getNewCorgi();
+ })
+ .fail(function() {
+   console.log("fail " + data);
+   console.log("ERROR status: " + textStatus);
+ });
 }
 function getNewCorgi(){
-    $.ajax({
-      url: '/corgis/',
-      method: 'GET',
-      dataType: 'json'
-    })
-      .done(function(data, textStatus){
-        console.log("correct " + data);
+   $.ajax({
+     url: '/corgis/corgi',
+     method: 'GET',
+     dataType: 'json'
+   })
+     .done(function(data, textStatus){
+       console.log(data.url);
+       $('img').attr('src', data.url);
+       $()
 
-      })
-      .fail(function(data, textStatus){
-        console.log("fail " + data);
-        console.log("ERROR getting students. status: " + textStatus);
-      })
-  }
+     })
+     .fail(function(data, textStatus){
+       console.log("fail " + data);
+       console.log("ERROR status: " + textStatus);
+     })
+ }

@@ -25,11 +25,18 @@ router.get('/corgi', function(req, res, next) {
 
 router.put('/:id', function(req, res, next) {
   var id = req.params.id;
-  Corgi.findByIdAndUpdate(req.params.id, { $set: req.body }, function (err, corgi) {
+  Corgi.findByIdAndUpdate(id, { $set: req.body }, function (err, corgi) {
     if (err) return res.status(500).send(err);
     res.json(corgi);
   });
 });
+
+
+router.put('/:id', function(req, res, next) {
+  var id = req.params.id;
+
+
+})
 
 
 module.exports = router;
